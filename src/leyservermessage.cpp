@@ -18,11 +18,6 @@ int ServerMessage(lua_State *state)
 	LUA->CheckType(2, GarrysMod::Lua::Type::STRING);
 	LUA->CheckType(3, GarrysMod::Lua::Type::STRING);
 
-	char chitler[2048];
-
-	bf_write hitler(chitler, sizeof(chitler));
-
-
 	INetChannel *chan = (INetChannel*)server->GetPlayerNetInfo(LUA->GetNumber(1));
 	if (!chan)
 		return 1;
